@@ -6,7 +6,7 @@ var spawn = require('child_process').spawn;
 
 // var _ = require('underscore'); // for some utility goodness
 // var GBot = require("../../../lib/bot/GBot.js"),
-//     KBase = require("../../bot/KBase"),
+var    KBase = require("../../bot/KBase");
 //     Utils = require("../../../lib/utils/Utils"),
 //     AppConfig = require("../../../config/AppConfig"),
 //     HttpWrap = require("../../../lib/utils/HttpWrap");
@@ -27,17 +27,20 @@ var commands = {
             // env:_.extend(process.env, { PATH: process.env.PATH + ':/usr/local/bin' })
         });
 
+        // these throw errors if you're already on a branch
         cmd.stdout.on('data', function (data) {
-            bot.say(data, input.message.room);
-            console.log('stdout: ' + data);
+            bot.say("data: " + data, input.message.room);
+            // console.log('stdout: ' + data);
         });
 
         cmd.stderr.on('data', function (data) {
             console.log('stderr: ' + data);
+            // bot.say("error: " + data, input.message.room);
         });
 
         cmd.on('close', function (code) {
-            bot.say("done", input.message.room);
+            KBase.initAsync();
+            bot.say("done code: " + code, input.message.room);
             // console.log('child process exited with code ' + code);
         });
 
