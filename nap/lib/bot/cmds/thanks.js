@@ -63,7 +63,6 @@ var bpCallback = function (apiRes, options) {
     showInfo(options.input, options.bot, apiRes);
 };
 
-
 var commands = {
     thanks: function (input, bot) {
         assert.isObject(input, "checkThanks expects an object");
@@ -75,34 +74,50 @@ var commands = {
         if (mentions) {
             // TODO - build a list
             console.log(mentions);
-            var namesList = mentions.map(function (m) {
-                console.log(m.screenName);
-                return m.screenName;
-            });
+            console.log(input.message.model.fromUser.username);
+              var namesList = mentions.map(function (m) {
+
+                  if (m.screenName != input.message.model.fromUser.username) {
+                    console.log(m.screenName);
+                    return m.screenName;
+                  } else {
+                    return;
+                  }
+              });
+
 
             console.log(namesList);
-            toUserMessage = namesList.join(", ").toLowerCase();
 
-            var options = {
-                method: 'POST',
-                input: input,
-                bot: bot
-            };
+            if (typeof namesList[0] != 'undefined') {
+                  toUserMessage = namesList.join(", ").toLowerCase();
 
-            for (var i = 0; i < namesList.length; i++) {
-                Utils.log('names', namesList);
-                Utils.log('firstName', namesList[i]);
-                toUser = namesList[i];
-                var apiPath = "/api/users/give-brownie-points?receiver=" + toUser + "&giver=" + fromUser;
-                HttpWrap.callApi(apiPath, options, bpCallback);
+                  var options = {
+                      method: 'POST',
+                      input: input,
+                      bot: bot
+                  };
+
+                  for (var i = 0; i < namesList.length; i++) {
+                      Utils.log('names', namesList);
+                      Utils.log('firstName', namesList[i]);
+                      toUser = namesList[i];
+                      var apiPath = "/api/users/give-brownie-points?receiver=" + toUser + "&giver=" + fromUser;
+                      HttpWrap.callApi(apiPath, options, bpCallback);
+                  }
+
+
+                  fromUser = input.message.model.fromUser.username.toLowerCase();
+                  output = "> " + fromUser + " sends brownie points to " + toUserMessage;
+                  output += " :thumbsup: :sparkles: :sparkles: ";
+                  return output;
+                } else {
+                  fromUser = input.message.model.fromUser.username.toLowerCase();
+                  output = "> sorry, you can't send brownie points to yourself, " + fromUser ;
+                  output += " :sparkles: :sparkles: ";
+                  return output;
+                }
+              }
             }
-        }
-
-        fromUser = input.message.model.fromUser.username.toLowerCase();
-        output = "> " + fromUser + " sends brownie points to " + toUserMessage;
-        output += " :thumbsup: :sparkles: :sparkles: ";
-        return output;
-    }
-};
+          };
 
 module.exports = commands;
