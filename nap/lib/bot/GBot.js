@@ -67,17 +67,18 @@ var GBot = {
 
     // TODO - check time of last message in this room
     // if less than 0.5s return true else false
-    checkRateLimit: function(message) {
+    overRateLimit: function(message) {
         var thisTime = new Date();
-        Utils.clog("checkRateLimit", message.model.fromUser.id, thisTime);
-        if (this.lastMessage) {
+        Utils.tlog("overRateLimit", message.model.fromUser.id, thisTime);
+        if (message.model.text == "spamtest" || this.lastMessage) {
             // check timestamp
             // compare with lastDate
             // use a hash lastDateTable[roomName]
+            return true;
         } else {
             this.lastMessage = message;
+            return false;
         }
-        return true;
     },
 
     handleReply: function(message) {
@@ -85,7 +86,7 @@ var GBot = {
         clog(message.room.uri + " @" + message.model.fromUser.username + ":");
         clog(" in|",  message.model.text);
 
-        if (this.checkRateLimit(message)) {
+        if (this.overRateLimit(message)) {
             output = "> slow down there!";
         } else {
             output = this.findAnyReply(message);
