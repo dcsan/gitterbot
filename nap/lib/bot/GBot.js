@@ -65,10 +65,32 @@ var GBot = {
         });
     },
 
+    // TODO - check time of last message in this room
+    // if less than 0.5s return true else false
+    checkRateLimit: function(message) {
+        var thisTime = new Date();
+        Utils.clog("checkRateLimit", message.model.fromUser.id, thisTime);
+        if (this.lastMessage) {
+            // check timestamp
+            // compare with lastDate
+            // use a hash lastDateTable[roomName]
+        } else {
+            this.lastMessage = message;
+        }
+        return true;
+    },
+
     handleReply: function(message) {
+        var output;
         clog(message.room.uri + " @" + message.model.fromUser.username + ":");
         clog(" in|",  message.model.text);
-        var output = this.findAnyReply(message);
+
+        if (this.checkRateLimit(message)) {
+            output = "> slow down there!";
+        } else {
+            output = this.findAnyReply(message);
+        }
+
         if (output) {
             clog("out| ", output);
             GBot.say(output, message.room);
