@@ -1,1 +1,7 @@
-{"name":"Gitterbot","tagline":"GitterBot with Wiki integration, and more!","body":"## Announcing CamperBot!\r\n\r\nCamperBot is our new AI friend who's going to make the FCC chatrooms more fun.\r\nHe can get info from the wiki, share bonfire hints, and help you get brownie points for helping people!\r\n\r\nhttps://twitter.com/FreeCodeCamp/status/627338604134559744\r\n\r\n\r\n### beta testing\r\nCurrently in beta test in the #HelpBonfires channel. Try it out here:\r\nhttps://gitter.im/FreeCodeCamp/HelpBonfires\r\n\r\n\r\n### read about what CamperBot features\r\nhttps://github.com/FreeCodeCamp/freecodecamp/wiki/camperbot\r\n\r\n\r\n### talk to the Dev Team\r\nhttps://gitter.im/dcsan/gitterbot\r\n\r\n","google":"","note":"Don't delete this file! It's used internally to help with page regeneration."}
+{
+  "name": "Gitterbot",
+  "tagline": "GitterBot with Wiki integration, and more!",
+  "body": "## Announcing CamperBot!\r\n\r\nCamperBot is our new AI friend who's going to make the FCC chatrooms more fun.\r\nHe can get info from the wiki, share bonfire hints, and help you get brownie points for helping people!\r\n\r\nhttps://twitter.com/FreeCodeCamp/status/627338604134559744\r\n\r\n\r\n### beta testing\r\nCurrently in beta test in the #HelpBonfires channel. Try it out here:\r\nhttps://gitter.im/FreeCodeCamp/HelpBonfires\r\n\r\n\r\n### read about what CamperBot features\r\nhttps://github.com/FreeCodeCamp/freecodecamp/wiki/camperbot\r\n\r\n\r\n### talk to the Dev Team\r\nhttps://gitter.im/dcsan/gitterbot\r\n\r\n",
+  "google": "gitterbot",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
