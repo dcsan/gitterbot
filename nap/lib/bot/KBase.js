@@ -116,6 +116,18 @@ KBase = {
 
     },
 
+    searchForTerm: function(term) {
+        var hits = this.allData.filter(function(entry) {
+            return (entry.data.indexOf(term) > -1);
+        })
+
+        if (hits.length === 0) {
+          return "sorry, nothing was found. try another term!"
+        }
+
+        return hits;
+    },
+
     getTopics: function (keyword) {
         // TODO - refac and use function above
         var searchDashName = TextLib.dashedName(keyword);
@@ -134,7 +146,7 @@ KBase = {
         // else
         Utils.log("shortList", shortList);
 
-        var emojiList = [':zero:', ':one:', ':two:', ':three:', ':four:', 
+        var emojiList = [':zero:', ':one:', ':two:', ':three:', ':four:',
                             ':five:', ':six:', ':seven:', ':eight:', ':nine:'];
 
         var findResults = "";
@@ -171,7 +183,6 @@ KBase = {
     //}
 
 };
-
 
 KBase.initSync();
 
@@ -222,4 +233,3 @@ module.exports = KBase;
 //     })
 //     // could also reject
 // },
-

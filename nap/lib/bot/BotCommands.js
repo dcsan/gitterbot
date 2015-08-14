@@ -155,7 +155,7 @@ var BotCommands = {
     },
 
     tooNoisy: function (input, bot) {
-        // if this.room.name 
+        // if this.room.name
         return false;
     },
 
@@ -276,15 +276,13 @@ var BotCommands = {
         return "WIP camperCount";
     },
 
-    //search: function (input, bot) {
-        //var data = KBase.search(input.params);
-        //var str = "searching for " + data;
-        // var str = topLine + wipHeader;
-        // str += "## search for" + input.text;
-        // str += "\n results will be here!";
-        // str += contactBox;
-        //return str;
-    //},
+    search: function (input, bot) {
+        var entries = KBase.searchForTerm(input.params);
+        console.log(entries);
+
+
+        return entries;
+    },
 
     welcome: function (input, bot) {
         var str;
@@ -299,7 +297,7 @@ var BotCommands = {
         return (this.welcome(input, bot) );
     },
 
-    //DEMO how to add a new 
+    //DEMO how to add a new
     bob: function(input, bot) {
         console.log("bob input>", input.params);
         console.log("from>", input.message.model.fromUser);
