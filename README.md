@@ -56,7 +56,8 @@ To install Node.js on Windows, follow these instructions: [http://blog.teamtreeh
         cd gitterbot
         cd nap
         ren dot-EXAMPLE.env dot.env
-        node app.js
+        npm install -g nodemon
+        nodemon app.js
 
  - That's it! The app should be running at [http://localhost:7891](http://localhost:7891).
 
@@ -72,12 +73,13 @@ You can now chat to your gitterbot via Gitter at
 
         git clone git@github.com:dcsan/gitterbot.git
 
-- Run the following commands to run the app:
+- Run the following commands as administrator to run the app:
 
         cd gitterbot
         cd nap
         cp dot-EXAMPLE.env dot.env
-        node app.js
+        npm install -g nodemon
+        nodemon app.js
 
  - That's it! The app should be running at [http://localhost:7891](http://localhost:7891).
 
