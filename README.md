@@ -51,7 +51,7 @@ To install Node.js on Windows, follow these instructions: [http://blog.teamtreeh
 
         git clone https://github.com/dcsan/gitterbot.git
 
- -  Run the following commands to run the app:
+ -  Run the following commands as administrator to run the app:
 
         cd gitterbot
         cd nap
