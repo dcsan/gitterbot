@@ -2,7 +2,7 @@
 
 body {
   padding:50px;
-  font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font:20px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color:#777;
   font-weight:300;
 }
@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bolder {
-    font-size: 14px;
+    font-size: 20px;
     color: #400;
     font-weight: bold;
 }
@@ -50,7 +50,7 @@ a {
 }
 
 a small {
-  font-size:11px;
+  font-size:18px;
   color:#777;
   margin-top:-0.6em;
   display:block;
@@ -71,7 +71,7 @@ blockquote {
 code, pre {
   font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
   color:#333;
-  font-size:12px;
+  font-size:20px;
 }
 
 pre {
@@ -177,7 +177,7 @@ section {
 }
 
 small {
-  font-size:11px;
+  font-size:18px;
 }
 
 hr {
