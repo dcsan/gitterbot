@@ -1,3 +1,7 @@
+### CUSTOM IGNORES ###
 *.env
 !dot-EXAMPLE.env
-data/wiki/
+/data/wiki/*
+!/bin/
+!/logs/
+
