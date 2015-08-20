@@ -1,5 +1,3 @@
-*.log
-.idea
-.env
 *.env
 !dot-EXAMPLE.env
+data/wiki/
