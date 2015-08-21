@@ -4,4 +4,6 @@
 /data/wiki/*
 !/bin/
 !/logs/
+!.gitkeep
+!README.md
 
