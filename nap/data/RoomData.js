@@ -575,7 +575,7 @@ var fccChatRooms = {
         fccOfficialChatRoomNames),
     casualChatRooms: prefixChannelName("FreeCodeCamp",
         fccCasualChatRoomNames),
-    cityChatRooms: prefixChannelName("FreeCodeCamp", fccCityChatRoomNames),
+    cityChatRooms: prefixChannelName("FreeCodeCamp", fccCityChatRoomNames)
 };
 
 var camperBotChatRoomNames = [
