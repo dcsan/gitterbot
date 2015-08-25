@@ -113,11 +113,11 @@ var thanksCommands = {
         var cleanMessage = function(message) {
             //return message;
             if (message.match(/^FCC: no user/)) {
-                message = "hmm, can't find that user on the beta site. wait til we release new version!"
+                message = "hmm, can't find that user on the beta site. wait til we release new version!";
             }
             message = "> :warning: " + message;
             return message;
-        }
+        };
 
         if (blob.response.error) {
             var message = cleanMessage(blob.response.error.message);
