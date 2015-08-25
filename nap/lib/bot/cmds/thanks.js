@@ -37,13 +37,13 @@ var thanksCommands = {
         }
     },
 
-    thanks: function (input, bot) {
+    thanks: function(input, bot) {
         Utils.hasProperty(input, "message", "thanks expects an object");
         //Utils.tlog("thanks", input);
 
         var mentions, output, fromUser, toUser, toUserMessage;
         mentions = input.message.model.mentions;
-        if (mentions && mentions.length === 0 ) {
+        if (mentions && mentions.length === 0) {
             Utils.warn("thanks", "without any mentions", input.message.model);
             return null;
         } // just 'thanks' in a message
@@ -55,28 +55,28 @@ var thanksCommands = {
             bot: bot
         };
 
-        var namesList = mentions.map(function (m) {
+        var namesList = mentions.map(function(m) {
             toUser = m.screenName.toLowerCase();
             if (toUser != fromUser) {
-              var apiPath = "/api/users/give-brownie-points?receiver=" + toUser + "&giver=" + fromUser;
-              HttpWrap.callApi(apiPath, options, thanksCommands.showInfoCallback);
-              return toUser;
+                var apiPath = "/api/users/give-brownie-points?receiver=" + toUser + "&giver=" + fromUser;
+                HttpWrap.callApi(apiPath, options, thanksCommands.showInfoCallback);
+                return toUser;
             } else {
-              return null;
+                return null;
             }
         });
 
-        if ( namesList[0] != null ) {
-          toUserMessage = namesList.join(" and @");
-          output = "> " + fromUser + " sends brownie points to @" + toUserMessage;
-          output += " :sparkles: :thumbsup: :sparkles: ";
-          // output += BotCommands.messages.wikiHint(fromUser);
-          return output;
+        if (namesList[0] != null) {
+            toUserMessage = namesList.join(" and @");
+            output = "> " + fromUser + " sends brownie points to @" + toUserMessage;
+            output += " :sparkles: :thumbsup: :sparkles: ";
+            // output += BotCommands.messages.wikiHint(fromUser);
+            return output;
         } else {
-          output = "> sorry " + fromUser + ", you can't send brownie points to yourself!";
-          output += " :sparkles: :sparkles: ";
-          return output;
-      }
+            output = "> sorry " + fromUser + ", you can't send brownie points to yourself!";
+            output += " :sparkles: :sparkles: ";
+            return output;
+        }
     },
 
     about: function(input, bot) {
