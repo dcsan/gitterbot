@@ -123,7 +123,9 @@ var thanksCommands = {
             var message = cleanMessage(blob.response.error.message);
             //message += Utils.betaFooter();
             Utils.warn("WARN @thanks>", blob.response.error.message, blob.response.error);
-            //blob.bot.say(message, blob.input.message.room);
+
+            // show the error to the user
+            blob.bot.say(message, blob.input.message.room);
             return false;
         }
 
