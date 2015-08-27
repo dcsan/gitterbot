@@ -27,7 +27,7 @@ var GBot = {
         this.listReplyOptions = [];
         this.gitter = new Gitter(AppConfig.token);
         this.joinKnownRooms();
-        this.joinBonfireRooms();
+        //this.joinBonfireRooms();
 
         // listen to other rooms for 1:1
         if (AppConfig.supportDmRooms) {
