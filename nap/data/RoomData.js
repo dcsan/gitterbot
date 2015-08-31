@@ -565,7 +565,7 @@ var camperBotChatRooms = [
 
 // @TODO Refactor into a room generator function
 var camperBotRooms = [].concat.apply([], [
-    camperBotChatRooms,
+    camperBotChatRooms
 ]).map(function (room) {
     return {
         name: room
@@ -594,18 +594,18 @@ var BotRoomData = {
 
     // this is the demobot that ships with the app
     demobot: [{
-        name: "demobot/test",
+        name: "demobot/test"
     }],
 
     // developer bot
     bothelp: [
 
         {
-            name: "bothelp/testing",
+            name: "bothelp/testing"
         },
 
         {
-            name: "bothelp/HelpBonfires",
+            name: "bothelp/HelpBonfires"
         },
 
         {
@@ -613,27 +613,27 @@ var BotRoomData = {
         },
 
         {
-            name: "bothelp",
+            name: "bothelp"
         },
 
         {
-            name: "bothelp/GeneralChat",
+            name: "bothelp/GeneralChat"
         },
 
         {
-            name: "bothelp/PrivateRoomTest",
+            name: "bothelp/PrivateRoomTest"
         },
 
         {
-            name: "egetzel/demo",
+            name: "egetzel/demo"
         },
 
         // Bonfire single rooms
 
         {
             name: "bothelp/bonfire-factorialize-a-number",
-            isBonfire: true,
-        },
+            isBonfire: true
+        }
 
     ],
 
