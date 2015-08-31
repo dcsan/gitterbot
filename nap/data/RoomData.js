@@ -606,67 +606,44 @@ var BotRoomData = {
 
     // this is the demobot that ships with the app
     demobot: [{
-        title: "demobot",
         name: "demobot/test",
-        icon: "star",
-        topics: ["getting started"]
     }],
 
     // developer bot
     bothelp: [
 
         {
-            title: "bothelp",
             name: "bothelp/testing",
-            icon: "question",
-            topics: ["chitchat", "bots", "bot-development", "camperbot"]
         },
 
         {
-            title: "HelpBonfires",
-            icon: "fire",
             name: "bothelp/HelpBonfires",
-            topics: bonfireTopics
         },
 
         {
-            title: "camperbot/localdev",
             name: "camperbot/localdev"
         },
 
         {
-            title: "bothelpDM",
             name: "bothelp",
         },
 
         {
-            title: "GeneralChat",
             name: "bothelp/GeneralChat",
         },
 
-        // {
-        //     title: "DataScience",
-        //     name: "FreeCodeCamp/DataScience",
-        //     topics: ["general", "DataScience"]
-        // },
-
         {
-            title: "PrivateRoomTest",
             name: "bothelp/PrivateRoomTest",
-            topics: ["general", "intros"]
         },
 
         {
-            title: "EdaanDemo",
             name: "egetzel/demo",
-            topics: ['egdemo']
         },
 
         // Bonfire single rooms
 
         {
             name: "bothelp/bonfire-factorialize-a-number",
-            topics: ['bonfire factorialize a number'],
             isBonfire: true,
         },
 
