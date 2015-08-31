@@ -128,7 +128,10 @@ var bonfireDashedNames = [
     "bonfire-friendly-date-ranges"
 ];
 
-var fccOfficialChatRooms = [
+var camperBotChatRooms = [
+    "camperbot/HelpZiplines",
+    "camperbot/devteam",
+    "camperbot/testing",
     "FreeCodeCamp/40PlusDevs",
     "FreeCodeCamp/Beta",
     "FreeCodeCamp/BookClub",
@@ -153,23 +156,7 @@ var fccOfficialChatRooms = [
     "FreeCodeCamp/TeamViewer",
     "FreeCodeCamp/Welcome",
     "FreeCodeCamp/Wiki",
-    "FreeCodeCamp/YouCanDoThis"
-];
-
-var fccCasualChatRooms = [
-    'FreeCodeCamp/Business',
-    'FreeCodeCamp/GameDev',
-    'FreeCodeCamp/Gaming',
-    'FreeCodeCamp/Hardware',
-    'FreeCodeCamp/Music',
-    'FreeCodeCamp/Photography',
-    'FreeCodeCamp/Saving',
-    'FreeCodeCamp/SelfImprovement',
-    'FreeCodeCamp/Sports',
-    'FreeCodeCamp/TVandMovies'
-];
-
-var fccCityChatRooms = [
+    "FreeCodeCamp/YouCanDoThis",
     "FreeCodeCamp/Aarhus",
     "FreeCodeCamp/AbuDhabi",
     "FreeCodeCamp/Accra",
@@ -573,18 +560,17 @@ var fccCityChatRooms = [
     "FreeCodeCamp/Yerevan",
     "FreeCodeCamp/Zagreb",
     "FreeCodeCamp/Znojmo",
-    "FreeCodeCamp/Zurich"
-];
-
-
-var camperBotChatRooms = [
-    "camperbot/HelpZiplines",
-    "camperbot/devteam",
-    "camperbot/testing"
-];
-
-/* ADD YOUR CHAT ROOMS HERE */
-var otherChatRooms = [
+    "FreeCodeCamp/Zurich",
+    "FreeCodeCamp/Business",
+    "FreeCodeCamp/GameDev",
+    "FreeCodeCamp/Gaming",
+    "FreeCodeCamp/Hardware",
+    "FreeCodeCamp/Music",
+    "FreeCodeCamp/Photography",
+    "FreeCodeCamp/Saving",
+    "FreeCodeCamp/SelfImprovement",
+    "FreeCodeCamp/Sports",
+    "FreeCodeCamp/TVandMovies",
     "dcsan/botzy",
     "dcsan/gitterbot"
 ];
@@ -592,10 +578,6 @@ var otherChatRooms = [
 // @TODO Refactor into a room generator function
 var camperBotRooms = [].concat.apply([], [
     camperBotChatRooms,
-    fccOfficialChatRooms,
-    fccCityChatRooms,
-    fccCasualChatRooms,
-    otherChatRooms
 ]).map(function (room) {
     return {
         name: room
