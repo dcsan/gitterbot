@@ -1,5 +1,9 @@
-*.log
-.idea
-.env
+### CUSTOM IGNORES ###
 *.env
 !dot-EXAMPLE.env
+/data/wiki/*
+!/bin/
+!/logs/
+!.gitkeep
+!README.md
+

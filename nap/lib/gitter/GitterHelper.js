@@ -63,7 +63,7 @@ var GitterHelper = {
             // body: JSON.stringify(data),
             body: data,
             json: true
-        }
+        };
 
         //Utils.tlog("postMessage", text, roomId);
 
@@ -71,7 +71,7 @@ var GitterHelper = {
             '/rooms/' + roomId + '/chatMessages',
             callback,
             opts
-        )
+        );
 
     },
 
@@ -112,14 +112,14 @@ var GitterHelper = {
                 }
                 var roomList = rooms.filter(function (rm) {
                     return rm.uri == roomUri;
-                })
+                });
                 if (roomList.length > 0) {
                     var room = roomList[0];
                     GitterHelper.roomDataCache[roomUri] = room;
                     cbParams.gitterRoom = room;
                     return callback(cbParams);
                 }
-            })
+            });
         }
     },
 
@@ -136,7 +136,7 @@ var GitterHelper = {
         GitterHelper.findRoomByName(roomUri, function(opts) {
             //Utils.clog("GitterHelper saying", text);
             GitterHelper.sayToRoomObj(text, opts.gitterRoom);
-        })
+        });
     }
 
 };

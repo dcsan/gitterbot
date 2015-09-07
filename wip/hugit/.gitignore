@@ -1,3 +1,4 @@
-node_modules
-.DS_Store*
+### CUSTOM IGNORES ###
+!/bin/
 .hubot_history
+
