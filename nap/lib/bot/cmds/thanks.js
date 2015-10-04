@@ -55,18 +55,17 @@ var thanksCommands = {
             bot: bot
         };
 
-        var namesList = mentions.map(function(m) {
+        var namesList = [];
+        mentions.map(function(m, idx) {
             toUser = m.screenName.toLowerCase();
-            if (toUser != fromUser) {
+            if (toUser != fromUser && (namesList.indexOf(toUser) === -1 || namesList.indexOf(toUser) == idx)) {
                 var apiPath = "/api/users/give-brownie-points?receiver=" + toUser + "&giver=" + fromUser;
                 HttpWrap.callApi(apiPath, options, thanksCommands.showInfoCallback);
-                return toUser;
-            } else {
-                return null;
+                namesList.push(toUser);
             }
         });
 
-        if (namesList[0] != null) {
+        if (namesList.length > 0) {
             toUserMessage = namesList.join(" and @");
             output = "> " + fromUser + " sends brownie points to @" + toUserMessage;
             output += " :sparkles: :thumbsup: :sparkles: ";
@@ -78,7 +77,7 @@ var thanksCommands = {
             return output;
         }
     },
-    
+
     about: function(input, bot) {
         // var mentioned = InputWrap.mentioned(input);
         var mentions, them, name;
@@ -162,4 +161,3 @@ module.exports = thanksCommands;
 //        :star: ${about.browniePoints}       | ${bio}
 //
 //        `;
-
