@@ -102,9 +102,9 @@ Bonfires = {
             var bfDataFiles = [
                 'basic-bonfires.json',
                 'intermediate-bonfires.json',
-                'advanced-bonfires.json',
-                'expert-bonfires.json',
-            ]
+                'upper-intermediate-bonfires.json',
+                'advanced-bonfires.json'
+            ];
 
             var allData = {
                 challenges: []
@@ -113,7 +113,13 @@ Bonfires = {
                 var raw = fs.readFileSync('./data/seed/challenges/' + fname, 'utf8');
                 var thisData = JSON.parse(raw);
                 allData.challenges = allData.challenges.concat(thisData.challenges);
-            })
+            });
+
+            //create dashed names
+            allData.challenges.map(function (challenge) {
+                var dashed = challenge.title.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase();
+                challenge.dashedName = challenge.type + "-" + dashed;
+            });
 
             this.data = allData;
             //Utils.tlog("Bonfires.data", "is", allData);
@@ -332,7 +338,7 @@ Bonfires = {
 
         var str = "## :fire:";
         str += TextLib.mdLink(
-            bonfire.name,
+            bonfire.title,
             "www.freecodecamp.com/challenges/" + bonfire.dashedName
         );
         str += " :link:";
@@ -356,7 +362,11 @@ Bonfires = {
     bonfireDescription: function (bonfire, lines) {
         if (lines) {
             var desc = bonfire.description.slice(0, lines);
-            return desc.join('\n');
+            //change <code> and </code> to ` and parse links to markdown
+            var descString = desc.join('\n');
+            descString = descString.replace(/<\/?code>/g, "`");
+            descString = descString.replace(/<a +href=['"]([^'"]+)[^>]+>(.*?)<\/a>/gi, '[$2]($1)');
+            return descString;
         } else {
             desc = bonfire.description[0];
             return desc;
@@ -372,7 +382,7 @@ Bonfires = {
     },
 
     bonfireWiki: function (bonfire) {
-        var link = Utils.linkify(this.currentBonfire.name)
+        var link = Utils.linkify(bonfire.dashedName);
         return "> :fire: wiki: " + link;
     }
 
@@ -388,4 +398,3 @@ Bonfires.load();
 //})
 
 module.exports = Bonfires;
-
