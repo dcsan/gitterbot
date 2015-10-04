@@ -69,7 +69,7 @@ Bonfires = {
             return "we're talking about bonfire :fire: " + name;
         },
         cantFind: function (name) {
-            return "> Sorry, can't find a bonfire called " + name + ". [ [Check the map?](http://www.freecodecamp.com/map#Basic-Algorithm-Scripting) ]";
+            return "> Sorry, can't find a bonfire called " + name + ". [ [Check the map?](http://www.freecodecamp.com/map#basic-algorithm-scripting) ]";
         },
         roomLink: function (name) {
             var str = ":construction: **spoiler alert** ";
