@@ -255,7 +255,7 @@ var BotCommands = {
     // },
     music: function (input, bot) {
         var str = "## Music!";
-        str += "\n http://plug.dj/freecodecamp";
+        str += "\n http://8tracks.com/quincylarson/quincy-larson-s-flow-state-coding-playlist";
         return str;
     },
 
