@@ -253,11 +253,12 @@ var BotCommands = {
     //     BotCommands.bot.scanRooms();
     //     return "rejoined";
     // },
-    music: function (input, bot) {
-        var str = "## Music!";
-        str += "\n http://plug.dj/freecodecamp";
-        return str;
-    },
+    //plug dj is no longer 
+    // music: function (input, bot) {
+    //     var str = "## Music!";
+    //     str += "\n http://plug.dj/freecodecamp";
+    //     return str;
+    // },
 
     announce: function(input, bot) {
         var parts = input.params.split(' ');
