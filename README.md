@@ -1,3 +1,4 @@
+### NOTE: CamperBot contributions have moved to [FreeCodeCamp/camperbot](https://github.com/freecodecamp/camperbot)
 
 ## Airtable recommendation
 update: I'm using Airtable to store some data. 
