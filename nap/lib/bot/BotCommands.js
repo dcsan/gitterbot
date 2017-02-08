@@ -183,7 +183,7 @@ var BotCommands = {
     // TODO - sort alphabetically
     rooms: function (input, bot) {
         var uri, link, str, roomNames, icon;
-        var baseList = RoomData.rooms();   // bot.roomList doesnt show private / meta data
+        var baseList = RoomData.rooms(bothelp);   // bot.roomList doesnt show private / meta data
 
         // https://gitter.im/FreeCodeCamp
         str = "## rooms\nSee all the FreeCodeCamp rooms at [gitter.im/FreeCodeCamp/rooms](https://gitter.im/orgs/FreeCodeCamp/rooms)\n"
@@ -272,7 +272,8 @@ var BotCommands = {
         str += "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
         return str;
     },
-
+     
+    // FIXME - Doesn't work either
     camperCount: function (input, bot) {
         return "WIP camperCount";
     },
