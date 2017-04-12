@@ -77,10 +77,33 @@ var GBot = {
         });
     },
 
+    // TODO - check time of last message in this room
+    // if less than 0.5s return true else false
+    overRateLimit: function(message) {
+        var thisTime = new Date();
+        Utils.tlog("overRateLimit", message.model.fromUser.id, thisTime);
+        if (message.model.text == "spamtest" || this.lastMessage) {
+            // check timestamp
+            // compare with lastDate
+            // use a hash lastDateTable[roomName]
+            return true;
+        } else {
+            this.lastMessage = message;
+            return false;
+        }
+    },
+
     handleReply: function(message) {
+        var output;
         clog(message.room.uri + " @" + message.model.fromUser.username + ":");
         clog(" in|",  message.model.text);
-        var output = this.findAnyReply(message);
+
+        if (this.overRateLimit(message)) {
+            output = "> slow down there!";
+        } else {
+            output = this.findAnyReply(message);
+        }
+
         if (output) {
             clog("out| ", output);
             GBot.say(output, message.room);
