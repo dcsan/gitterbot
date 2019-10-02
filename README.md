@@ -36,7 +36,9 @@ Use `explain` to pull a wiki summary right into the chat:![](http://dcsan.github
 
 ### Points system
 
-Allow your users to send points to each other to say 'thanks @friend'![](http://dcsan.github.io/gitterbot/images/anims/points.gif)
+Allow your users to send points to each other to say 'thanks @friend'!
+
+[points](http://dcsan.github.io/gitterbot/images/anims/points.gif)
 
 ### Fixed messages
 
